@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"id": "saytime-mod",
+	"version": "${version}",
+	"name": "sayTime Mod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/saytime-mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "com.saytime.SayTimeMod",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "com.saytime.SayTimeModClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"saytime-mod.mixins.json",
+		{
+			"config": "saytime-mod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.1",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
